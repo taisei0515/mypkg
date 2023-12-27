@@ -1,6 +1,8 @@
 # mypkg
 ROS2で使えるパッケージであり、talker,listenerの二つのノードを使用し、メッセージの送受信を行う。
 
+##ダウンロード方法
+
 ## 起動する手順
 端末1でtalkerを立ち上げる。
 ```
@@ -8,9 +10,7 @@ ROS2で使えるパッケージであり、talker,listenerの二つのノード�
 ```
 何も表示されないのでこのまま別の端末でROS2を使い、サブスクライブする。
 ```
-端末2 $ ros2 topic echo /countup
-```
-実行結果
+端末2 $ ros2 run mypkg listener
 ...
 data: 46
 ---
@@ -19,14 +19,8 @@ data: 47
 data: 48
 ---
 ...
-
-## 使い方
-
 ```
-$ seq 5 | ./plus
-$ 15
-
-```
+このようにtalker側の/countupからメッセージをもらってlistenerで表示させている。
 
 ## OS
 * Windows
@@ -39,6 +33,7 @@ $ 15
 ## 必要なソフトウェア
 * Python
   * テスト済み: 3.7~3.10
+* ROS2
 
 ## テストの結果
 ![test](https://github.com/taisei0515/robosys202x/actions/workflows/test.yml/badge.svg)
