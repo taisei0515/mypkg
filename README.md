@@ -1,40 +1,13 @@
 # mypkg
 ROS2で使えるパッケージであり、talker,listenerの二つのノードを使用し、メッセージの送受信を行う。
 
-## インストール方法
-このパッケージを使用するためにROS2をインストールします。
-### ROS1がすでにインストールされている場合
-初めに別の環境を準備してください。
-```
-$ vi ~/.bashrc
-```
-と入力し、.bashrcに関係する記述を#を付けてコメントアウトしてください。
-### ROS2のインストール方法
-```
-$ git clone https://github.com/ryuichiueda/ros2_setup_scripts
-```
-```
-$ cd ros2_setup_scripts
-```
-```
-$ ./setup.bash
-```
-ここまでできたら動作確認をします。
-```
-$ source ~/.bashrc
-```
-これでROS2のインストールは完了です。
-
-## ダウンロード方法
-```i
-$ chmod +x plus
-```
-
 ## 起動する手順
-* 数列が入ったファイルを用意してください。(例)seq 5
-* seq 5は1~5の数列を作ります。
+端末1でtalker.pyを立ち上げる。
+```
+端末1 $ ros2 run demo_nodes_py talker
+```
 
-## 簡単な使い方
+## 使い方
 
 ```
 $ seq 5 | ./plus
