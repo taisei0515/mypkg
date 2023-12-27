@@ -2,10 +2,23 @@
 ROS2で使えるパッケージであり、talker,listenerの二つのノードを使用し、メッセージの送受信を行う。
 
 ## 起動する手順
-端末1でtalker.pyを立ち上げる。
+端末1でtalkerを立ち上げる。
 ```
-端末1 $ ros2 run demo_nodes_py talker
+端末1 $ ros2 run mypkg talker
 ```
+何も表示されないのでこのまま別の端末でROS2を使い、サブスクライブする。
+```
+端末2 $ ros2 topic echo /countup
+```
+実行結果
+...
+data: 46
+---
+data: 47
+---
+data: 48
+---
+...
 
 ## 使い方
 
