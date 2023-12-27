@@ -1,15 +1,15 @@
 # mypkg
-ROS2で使えるパッケージであり、talker,listenerの二つのノードを使用し、メッセージの送受信を行い、talkerが行っているcountupをlistenerが読み取ります。
+ROS2で使えるパッケージであり、talker,listenerの二つのノードを使用し、メッセージの送受信を行い、talkerが行っているcountupをlistenerが読み取る。
 
 ## ダウンロード方法
-mypkgレポジトリにある各々のフォルダーに入っているファイル、またファイルをそのままコピーし、新規ファイルにペーストしてください。
+mypkgフォルダーに入っているファイルをコピーし、新規ファイルに貼り付けてください。
 
 ## 起動する手順
 端末1でtalkerを立ち上げる。
 ```
 端末1 $ ros2 run mypkg talker
 ```
-何も表示されないのでこのまま別の端末でROS2を使い、サブスクライバを持つlistenerを立ち上げます。
+何も表示されないのでこのまま別の端末でROS2を使い、サブスクライバを持つlistenerを立ち上げる。
 ```
 端末2 $ ros2 run mypkg listener
 ...
@@ -22,6 +22,9 @@ data: 48
 ...
 ```
 このようにtalker側の/countupからメッセージをもらってlistenerで表示させている。
+
+## メッセージの型
+talkerからlistenerに流れるデータの方は16ビットの符号付き整数である。
 
 ## OS
 * Windows
@@ -37,7 +40,7 @@ data: 48
 * ROS2
 
 ## テストの結果
-![test](https://github.com/taisei0515/robosys202x/actions/workflows/test.yml/badge.svg)
+![test](https://github.com/taisei0515/mypkg/actions/workflows/test.yml/badge.svg)
 
 ## 権利関係
 
