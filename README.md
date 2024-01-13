@@ -1,5 +1,5 @@
 # mypkg
-ROS2で使えるパッケージであり、talker,listenerの二つのノードを使用し、メッセージの送受信を行い、talkerが行っているcountupをlistenerが読み取る。
+千葉工業大学のロボットシステム学の講義内で扱ったレポジトリです。
 
 ## 起動する手順
 端末1でtalkerを立ち上げる。
@@ -18,13 +18,48 @@ data: 48
 ---
 ...
 ```
-このようにtalker側の/countupからメッセージをもらってlistenerで表示させている。
+中止する場合はctrl+C
+
+* 一度に二つのノードを立ち上げる場合
+```
+$ ros2 launch mypkg talk_listen.launch.py
+```
+実行結果は次の通りになる。
+```
+[INFO] [launch]: All log files can be found below /home/raisu/.ros/log/2024-01-13-14-29-53-665808-DESKTOP-AKKN6N4-294
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [talker-1]: process started with pid [296]
+[INFO] [listener-2]: process started with pid [298]
+[listener-2] [INFO] [1705123795.385050900] [listener]: Listen: 0
+[listener-2] [INFO] [1705123795.805992900] [listener]: Listen: 1
+[listener-2] [INFO] [1705123796.306473000] [listener]: Listen: 2
+[listener-2] [INFO] [1705123796.805138700] [listener]: Listen: 3
+[listener-2] [INFO] [1705123797.305697000] [listener]: Listen: 4
+[listener-2] [INFO] [1705123797.805182600] [listener]: Listen: 5
+[listener-2] [INFO] [1705123798.307108300] [listener]: Listen: 6
+[listener-2] [INFO] [1705123798.804587300] [listener]: Listen: 7
+[listener-2] [INFO] [1705123799.304705800] [listener]: Listen: 8
+[listener-2] [INFO] [1705123799.804512500] [listener]: Listen: 9
+[listener-2] [INFO] [1705123800.304073000] [listener]: Listen: 10
+[listener-2] [INFO] [1705123800.805816800] [listener]: Listen: 11
+[listener-2] [INFO] [1705123801.304898100] [listener]: Listen: 12
+[listener-2] [INFO] [1705123801.804237900] [listener]: Listen: 13
+[listener-2] [INFO] [1705123802.305331000] [listener]: Listen: 14
+[listener-2] [INFO] [1705123802.804934500] [listener]: Listen: 15
+[listener-2] [INFO] [1705123803.304293100] [listener]: Listen: 16
+[listener-2] [INFO] [1705123803.804467800] [listener]: Listen: 17
+[listener-2] [INFO] [1705123804.304669400] [listener]: Listen: 18
+```
+中止する場合はctrl+C
 
 ## talker
-トピックに継続的にメッセージを送信する。
+パブリッシャを持つノード。トピックに継続的にメッセージを送信する。
 
 ## listener
-talkerからのトピックからメッセージを受け取り、反映する。
+サブスクライバを持つノード。talkerからのトピックからメッセージを受け取り、反映する。
+
+## talk_listen.launch.py
+talkerとlistener二つのノードを一度に立ち上げる。
 
 ## メッセージの型
 talkerからlistenerに流れるデータの方は16ビットの符号付き整数である。
